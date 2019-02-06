@@ -1,0 +1,7 @@
+{
+  "extends": "@nju33/tsconfig-react-module",
+  "include": ["src"],
+  "compilerOptions": {
+    "outDir": "dist"
+  }
+}

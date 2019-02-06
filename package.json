@@ -1,0 +1,42 @@
+{
+  "name": "docz-theme-figma",
+  "version": "0.0.0",
+  "main": "index.js",
+  "module": "dist/index.js",
+  "source": "src/index.tsx",
+  "repository": "git@github.com:nju33/docz-theme-figma.git",
+  "author": "nju33 <nju33.ki@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "ts.dev": "tsc -w",
+    "docz.dev": "docz dev --config doczrc.dev.js",
+    "dev": "run-p *.dev"
+  },
+  "peerDependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "styled-components": "^4.0.0"
+  },
+  "devDependencies": {
+    "@nju33/prettier": "^0.0.6",
+    "@nju33/tsconfig-react-module": "^0.0.6",
+    "@nju33/tslint": "^0.0.6",
+    "@types/lodash-es": "^4.17.1",
+    "@types/react-router-dom": "^4.3.1",
+    "@types/styled-components": "^4.1.8",
+    "docz-theme-default": "^0.13.7",
+    "npm-run-all": "^4.1.5",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "styled-components": "^4.1.3",
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.1"
+  },
+  "dependencies": {
+    "@c8s/flex": "^0.0.7",
+    "docz": "^0.13.7",
+    "lodash-es": "^4.17.11",
+    "react-router-dom": "^4.3.1",
+    "webfontloader": "^1.6.28"
+  }
+}
