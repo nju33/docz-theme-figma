@@ -10,4 +10,10 @@ export const Menu = styled.menu`
   align-items: center;
   color: #fff;
   font-size: 1.15em;
+  padding-left: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 40px;
+  font-weight: 300;
 `;

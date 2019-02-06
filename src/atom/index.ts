@@ -11,6 +11,7 @@ export * from './hr';
 export * from './menu';
 export * from './ol';
 export * from './p';
+export * from './playground';
 export * from './pre';
 export * from './wall';
 export * from './table';

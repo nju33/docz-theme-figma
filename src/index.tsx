@@ -1,6 +1,15 @@
 import React from 'react';
-import {theme, DocPreview, ThemeConfig} from 'docz';
+import {
+  theme,
+  DocPreview,
+  ThemeConfig,
+  PageProps,
+  RenderComponentProps,
+} from 'docz';
 import {ThemeProvider, createGlobalStyle} from 'styled-components';
+import {RouteComponentProps} from 'react-router-dom';
+import {library} from '@fortawesome/fontawesome-svg-core';
+import {faCaretRight, faCaretDown} from '@fortawesome/free-solid-svg-icons';
 // import {get} from 'lodash-es';
 // import webfont from 'webfontloader';
 
@@ -10,7 +19,8 @@ import {ThemeProvider, createGlobalStyle} from 'styled-components';
 import * as page from './page';
 import * as component from './component';
 import * as atom from './atom';
-import {RouteComponentProps} from 'react-router-dom';
+
+library.add(faCaretRight, faCaretDown);
 
 // tslint:disable:max-line-length
 const GlobalStyle = createGlobalStyle`
@@ -25,7 +35,11 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     background: #e5e5e5;
-    font: 15px/1;
+    font: 15px/1 helvetica, arial, 'hiragino kaku gothic pro', meiryo, 'ms pgothic', sans-serif;;
+  }
+
+  .DoczThemeFigma-mdx_Container {
+    line-height: 1.6;
   }
 `;
 // tslint:enable:max-line-length
@@ -39,14 +53,16 @@ const Theme = () => (
           <ThemeProvider theme={{}}>
             <DocPreview
               components={{
-                page: (props: RouteComponentProps) => {
+                page: (props: RouteComponentProps & PageProps) => {
                   return <page.Page {...props} title={config.title} />;
                 },
                 notFound: (props: RouteComponentProps) => {
                   return <page.NotFound {...props} title={config.title} />;
                 },
                 // notFound: () => <div>not found</div>,
-                render: component.Render,
+                render: (props: RenderComponentProps) => {
+                  return <component.Render {...props} />;
+                },
                 blockquote: atom.Blockquote,
                 h1: atom.H1,
                 h2: atom.H2,

@@ -17,16 +17,20 @@ export abstract class Figma<
         className="DoczThemeFigma-template_Container"
         alignItems="stretch"
       >
-        <Flex.itemFluid style={{maxHeight: 55}}>
+        <Flex.itemFluid style={{minHeight: 40, maxHeight: 40}}>
           <atom.Menu>{this.props.title}</atom.Menu>
         </Flex.itemFluid>
         <Flex.itemFluid.row>
-          <Flex.itemFluid style={{maxWidth: 250}}>
+          <Flex.itemFluid
+            style={{
+              maxWidth: 200,
+            }}
+          >
             <component.Sidebar>alkdsjf</component.Sidebar>
           </Flex.itemFluid>
-          <Flex.itemFluid>
+          <Flex.itemFluid.row>
             <this.Main {...this.props} />
-          </Flex.itemFluid>
+          </Flex.itemFluid.row>
         </Flex.itemFluid.row>
       </Flex.column>
     );
