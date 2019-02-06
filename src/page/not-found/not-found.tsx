@@ -1,9 +1,10 @@
-// import React from 'react';
+import React from 'react';
 import {RouteComponentProps} from 'react-router-dom';
 import Figma from '../../template/figma/index';
+import {PageProps} from '../props';
 
-export class NotFound extends Figma<RouteComponentProps> {
-  // render() {
-  //   return <div>not-found123</div>;
-  // }
+export class NotFound extends Figma<PageProps & RouteComponentProps> {
+  Main = () => {
+    return <div>page not found</div>;
+  };
 }

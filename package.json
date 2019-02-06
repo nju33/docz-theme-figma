@@ -37,6 +37,7 @@
     "docz": "^0.13.7",
     "lodash-es": "^4.17.11",
     "react-router-dom": "^4.3.1",
+    "vwxy": "^0.1.1",
     "webfontloader": "^1.6.28"
   }
 }
