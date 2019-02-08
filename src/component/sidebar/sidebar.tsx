@@ -5,7 +5,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {withState} from 'recompose';
 import * as atom from '../../atom';
 
-const SidebarWall = styled(atom.Wall)`
+const SidebarWall = styled(atom.Frame)`
   width: 200px;
   position: fixed;
   top: 40px;
@@ -44,7 +44,7 @@ const SidebarUl = styled(atom.Ul)`
 const dropmenuEnhancer = withState('opened', 'open', false);
 
 export class Sidebar extends React.Component {
-  private DropMenuBase = dropmenuEnhancer(
+  DropMenu = dropmenuEnhancer(
     (props: {
       item: MenuItem;
       opened: boolean;
@@ -89,7 +89,7 @@ export class Sidebar extends React.Component {
 
   render() {
     return (
-      <SidebarWall data-background="#fff">
+      <atom.Frame>
         <DocsMenu>
           {menuItems => {
             return (
@@ -109,7 +109,7 @@ export class Sidebar extends React.Component {
             );
           }}
         </DocsMenu>
-      </SidebarWall>
+      </atom.Frame>
     );
   }
 }

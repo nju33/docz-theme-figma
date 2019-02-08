@@ -8,7 +8,7 @@ import * as atom from '../../atom';
 
 type IntersectionProps = DoczPageProps & PageProps & RouteComponentProps;
 
-const InnerWall = styled(atom.Wall)`
+const InnerWall = styled(atom.Frame)`
   max-width: 700px;
   margin: 0 auto;
 `;
@@ -16,11 +16,11 @@ const InnerWall = styled(atom.Wall)`
 export class Page extends Figma<IntersectionProps> {
   Main: React.SFC<IntersectionProps> = props => {
     return (
-      <atom.Wall>
+      <atom.Frame>
         <InnerWall className="DoczThemeFigma-mdx_Container">
           {props.children}
         </InnerWall>
-      </atom.Wall>
+      </atom.Frame>
     );
   };
 }
