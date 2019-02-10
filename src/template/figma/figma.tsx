@@ -26,7 +26,7 @@ export abstract class Figma<
               maxWidth: 200,
             }}
           >
-            <component.Sidebar>alkdsjf</component.Sidebar>
+            <component.Sidebar />
           </Flex.itemFluid>
           <Flex.itemFluid.row>
             <this.Main {...this.props} />

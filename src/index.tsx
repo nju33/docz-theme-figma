@@ -18,7 +18,25 @@ import {faCaretRight, faCaretDown} from '@fortawesome/free-solid-svg-icons';
 // import * as modes from './styles/modes';
 import * as page from './page';
 import * as component from './component';
-import * as atom from './atom';
+import * as a from './atoms/a';
+import * as blockquote from './atoms/blockquote';
+import * as code from './atoms/code';
+import * as frame from './atoms/frame';
+import * as h1 from './atoms/h1';
+import * as h2 from './atoms/h2';
+import * as h3 from './atoms/h3';
+import * as h4 from './atoms/h4';
+import * as h5 from './atoms/h5';
+import * as h6 from './atoms/h6';
+import * as hr from './atoms/hr';
+import * as menu from './atoms/menu';
+import * as ol from './atoms/ol';
+import * as p from './atoms/p';
+import * as playground from './atoms/playground';
+import * as pre from './atoms/pre';
+import * as table from './atoms/table';
+import * as ul from './atoms/ul';
+
 
 library.add(faCaretRight, faCaretDown);
 
@@ -63,18 +81,18 @@ const Theme = () => (
                 render: (props: RenderComponentProps) => {
                   return <component.Render {...props} />;
                 },
-                blockquote: atom.Blockquote,
-                h1: atom.H1,
-                h2: atom.H2,
-                h3: atom.H3,
-                h4: atom.H4,
-                h5: atom.H5,
-                h6: atom.H6,
-                hr: atom.Hr,
-                ul: atom.Ul,
-                ol: atom.Ol,
-                p: atom.P,
-                a: atom.A,
+                blockquote: blockquote.preview,
+                h1: h1.preview,
+                h2: h2.preview,
+                h3: h3.preview,
+                h4: h4.preview,
+                h5: h5.preview,
+                h6: h6.preview,
+                hr: hr.preview,
+                ul: ul.preview,
+                ol: ol.preview,
+                p: P,
+                a: A,
                 inlineCode: atom.Code,
                 // loading: components.Loading,
                 loading: () => null,
