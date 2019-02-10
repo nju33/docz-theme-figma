@@ -1,7 +1,7 @@
 import React from 'react';
 import Flex from '@c8s/flex';
 import * as component from '../../component';
-import * as atom from '../../atom';
+import * as menu from '../../atoms/menu';
 import {PageProps} from '../../page/props';
 
 export abstract class Figma<
@@ -18,7 +18,7 @@ export abstract class Figma<
         alignItems="stretch"
       >
         <Flex.itemFluid style={{minHeight: 40, maxHeight: 40}}>
-          <atom.Menu>{this.props.title}</atom.Menu>
+          <menu.defaults>{this.props.title}</menu.defaults>
         </Flex.itemFluid>
         <Flex.itemFluid.row>
           <Flex.itemFluid

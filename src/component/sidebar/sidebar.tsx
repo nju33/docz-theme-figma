@@ -1,45 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import {Menu as DocsMenu, Link, MenuItem} from 'docz';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {withState} from 'recompose';
-import * as atom from '../../atom';
-
-const SidebarWall = styled(atom.Frame)`
-  width: 200px;
-  position: fixed;
-  top: 40px;
-  height: calc(100% - 40px);
-`;
-
-const SidebarUl = styled(atom.Ul)`
-  list-style: none;
-  padding: 0;
-  font-weight: 300;
-  font-size: 12px;
-  line-height: 2.1;
-
-  & [data-icon] {
-    opacity: 0.3;
-  }
-
-  & .DoczThemeFigma-sidebar_Item {
-    display: block;
-    color: #444;
-    text-decoration: none;
-
-    padding: 0.3em 0.7em;
-    border: 1px solid transparent;
-
-    &:hover {
-      border-color: #00c4ff;
-
-      & [data-icon] {
-        opacity: 1;
-      }
-    }
-  }
-`;
+import * as div from '../../atoms/div';
+import * as ul from '../../atoms/ul';
 
 const dropmenuEnhancer = withState('opened', 'open', false);
 
@@ -53,31 +18,41 @@ export class Sidebar extends React.Component {
       // tslint:disable:no-non-null-assertion
       return (
         <>
-          <div className="DoczThemeFigma-sidebar_Item">
+          <div
+            className="DoczThemeFigma-sidebar_Item"
+            // tslint:disable-next-line:react-this-binding-issue
+            onClick={() => props.open(!props.opened)}
+          >
             <FontAwesomeIcon
               icon="caret-right"
               style={{width: 10, height: 10}}
             />
             <span style={{marginLeft: 5}}>{props.item.name}</span>
           </div>
-          <atom.Ul style={{marginLeft: '1em'}}>
-            {props.item.menu!.map(childItem => {
-              return (
-                <li key={props.item.name}>
-                  <this.Menu item={childItem} />
-                </li>
-              );
-            })}
-          </atom.Ul>
+          {props.opened && (
+            <ul.sidebar>
+              {props.item.menu!.map(childItem => {
+                return (
+                  <li key={props.item.name}>
+                    <this.Menu item={childItem} child />
+                  </li>
+                );
+              })}
+            </ul.sidebar>
+          )}
         </>
       );
       // tslint:enable:no-non-null-assertion
     },
   );
 
-  Menu: React.SFC<{item: MenuItem}> = ({item}) => {
+  Menu: React.SFC<{item: MenuItem; child?: boolean}> = ({item, child}) => {
     return (
-      <Link to={item.route || '/'} className="DoczThemeFigma-sidebar_Item">
+      <Link
+        to={item.route || '/'}
+        className="DoczThemeFigma-sidebar_Item"
+        style={{paddingLeft: child ? '4em' : '2em'}}
+      >
         {item.name}
       </Link>
     );
@@ -89,11 +64,11 @@ export class Sidebar extends React.Component {
 
   render() {
     return (
-      <atom.Frame>
+      <div.frame className="sidebar">
         <DocsMenu>
           {menuItems => {
             return (
-              <SidebarUl>
+              <ul.sidebar>
                 {menuItems.map(item => {
                   return (
                     <li key={item.name}>
@@ -105,11 +80,11 @@ export class Sidebar extends React.Component {
                     </li>
                   );
                 })}
-              </SidebarUl>
+              </ul.sidebar>
             );
           }}
         </DocsMenu>
-      </atom.Frame>
+      </div.frame>
     );
   }
 }

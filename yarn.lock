@@ -1037,6 +1037,11 @@
   resolved "https://registry.yarnpkg.com/@nju33/prettier/-/prettier-0.0.6.tgz#bd5d632293b9219d926ef708ab26dccbbf3de83d"
   integrity sha512-uSD8ofg+r6DLqT06rwuA0eb9tkosjKJYztgs4LBmDYxMfvI+R/6KrCorM+XsIG0UNO7NvaxHV0gI7H9akB9qSQ==
 
+"@nju33/styled-components@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@nju33/styled-components/-/styled-components-0.0.5.tgz#9b479747323e9dfb250738f7c867ab2ab5bf8002"
+  integrity sha512-vPXMvHIDGBx+YbqSau+fMsYnQdC7poXaBjegWDRO85I2d0fVCqFd5YbGY0cb8LaHmCgBPTd/j1DH3acL8GHXdw==
+
 "@nju33/tsconfig-base@^0.0.6":
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/@nju33/tsconfig-base/-/tsconfig-base-0.0.6.tgz#f7343bf66d40d72bd84a818589efac13e640829b"

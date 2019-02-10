@@ -38,6 +38,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.14",
     "@fortawesome/free-solid-svg-icons": "^5.7.1",
     "@fortawesome/react-fontawesome": "^0.1.4",
+    "@nju33/styled-components": "^0.0.5",
     "docz": "^0.13.7",
     "lodash-es": "^4.17.11",
     "react-router-dom": "^4.3.1",

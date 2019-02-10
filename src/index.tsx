@@ -21,7 +21,6 @@ import * as component from './component';
 import * as a from './atoms/a';
 import * as blockquote from './atoms/blockquote';
 import * as code from './atoms/code';
-import * as frame from './atoms/frame';
 import * as h1 from './atoms/h1';
 import * as h2 from './atoms/h2';
 import * as h3 from './atoms/h3';
@@ -29,14 +28,13 @@ import * as h4 from './atoms/h4';
 import * as h5 from './atoms/h5';
 import * as h6 from './atoms/h6';
 import * as hr from './atoms/hr';
-import * as menu from './atoms/menu';
+// import * as menu from './atoms/menu';
 import * as ol from './atoms/ol';
 import * as p from './atoms/p';
-import * as playground from './atoms/playground';
+// import * as playground from './atoms/playground';
 import * as pre from './atoms/pre';
 import * as table from './atoms/table';
 import * as ul from './atoms/ul';
-
 
 library.add(faCaretRight, faCaretDown);
 
@@ -91,13 +89,13 @@ const Theme = () => (
                 hr: hr.preview,
                 ul: ul.preview,
                 ol: ol.preview,
-                p: P,
-                a: A,
-                inlineCode: atom.Code,
+                p: p.preview,
+                a: a.preview,
+                inlineCode: code.preview,
                 // loading: components.Loading,
                 loading: () => null,
-                table: atom.Table,
-                pre: atom.Pre,
+                table: table.preview,
+                pre: pre.preview,
                 // tooltip: components.Tooltip,
                 tooltip: () => null,
               }}
