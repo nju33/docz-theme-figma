@@ -5,7 +5,7 @@ export const sidebar = styled(defaults)`
   list-style: none;
   padding: 0;
   font-weight: 300;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 2.1;
   /* margin-left: 1em; */
 

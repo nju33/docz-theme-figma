@@ -14,8 +14,17 @@ const mixin: FrameMixin = (mixinName => (first, ...interpolations) => css`
 `) as FrameMixin;
 
 mixin[inner] = mixin(inner)`
-  max-width: 700px;
+  // max-width: 700px;
   margin: 0 auto;
+  background: linear-gradient(to left, #1e1e1e 30vw, transparent 30vw);
+
+  & > div > *:first-child {
+    margin-top: 0;
+    padding-top: 10px;
+  }
+  & > div > *:last-child {
+    margin-bottom: 0;
+  }
 `;
 
 mixin[sidebar] = mixin(sidebar)`

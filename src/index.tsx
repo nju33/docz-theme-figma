@@ -6,16 +6,11 @@ import {
   PageProps,
   RenderComponentProps,
 } from 'docz';
+import {Provider} from 'react-redux';
 import {ThemeProvider, createGlobalStyle} from 'styled-components';
 import {RouteComponentProps} from 'react-router-dom';
 import {library} from '@fortawesome/fontawesome-svg-core';
 import {faCaretRight, faCaretDown} from '@fortawesome/free-solid-svg-icons';
-// import {get} from 'lodash-es';
-// import webfont from 'webfontloader';
-
-// import {config} from './config';
-// import * as components from './components/ui';
-// import * as modes from './styles/modes';
 import * as page from './page';
 import * as component from './component';
 import * as a from './atoms/a';
@@ -28,13 +23,12 @@ import * as h4 from './atoms/h4';
 import * as h5 from './atoms/h5';
 import * as h6 from './atoms/h6';
 import * as hr from './atoms/hr';
-// import * as menu from './atoms/menu';
 import * as ol from './atoms/ol';
 import * as p from './atoms/p';
-// import * as playground from './atoms/playground';
 import * as pre from './atoms/pre';
 import * as table from './atoms/table';
 import * as ul from './atoms/ul';
+import store from './store';
 
 library.add(faCaretRight, faCaretDown);
 
@@ -64,7 +58,7 @@ const Theme = () => (
   <ThemeConfig>
     {config => {
       return (
-        <>
+        <Provider store={store}>
           <GlobalStyle />
           <ThemeProvider theme={{}}>
             <DocPreview
@@ -101,31 +95,12 @@ const Theme = () => (
               }}
             />
           </ThemeProvider>
-        </>
+        </Provider>
       );
     }}
   </ThemeConfig>
 );
 
-// webfont.load({
-//   google: {
-//     families: [
-//       'Source Code Pro',
-//       'Source Sans Pro:400,600',
-//       'Poppins:400',
-//       'Playfair Display:700',
-//     ],
-//   },
-// });
-
-const enhance = theme({}, ({mode, codemirrorTheme, ...config}) => ({
-  ...config,
-  mode,
-  codemirrorTheme: codemirrorTheme || `docz-${mode}`,
-  colors: {
-    // ...get(modes, mode),
-    ...config.colors,
-  },
-}));
+const enhance = theme({});
 
 export default enhance(Theme);

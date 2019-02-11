@@ -16,4 +16,5 @@ export const defaults = styled.menu`
   left: 0;
   height: 40px;
   font-weight: 300;
+  font-size: 13px;
 `;
