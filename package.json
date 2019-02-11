@@ -8,9 +8,13 @@
   "author": "nju33 <nju33.ki@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "prepare": "yarn build",
+    "test": ":",
     "ts.dev": "tsc -w",
+    "ts.build": "tsc",
     "docz.dev": "docz dev --config doczrc.dev.js",
-    "dev": "run-p *.dev"
+    "dev": "run-p *.dev",
+    "build": "run-s *.build"
   },
   "peerDependencies": {
     "react": "^16.2.0",
