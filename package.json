@@ -1,6 +1,6 @@
 {
   "name": "docz-theme-figma",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "module": "dist/index.js",
   "source": "src/index.tsx",
