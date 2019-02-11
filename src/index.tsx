@@ -67,7 +67,8 @@ const Theme = () => (
                   return <page.Page {...props} title={config.title} />;
                 },
                 notFound: (props: RouteComponentProps) => {
-                  return <page.NotFound {...props} title={config.title} />;
+                  const NotFound: any = page.NotFound;
+                  return <NotFound {...props} title={config.title} />;
                 },
                 // notFound: () => <div>not found</div>,
                 render: (props: RenderComponentProps) => {
