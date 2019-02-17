@@ -105,3 +105,10 @@ const Theme = () => (
 const enhance = theme({});
 
 export default enhance(Theme);
+
+export {
+  center as Center,
+  floatBox as FloatBox,
+  floatLeft as FloatLeft,
+  floatRight as FloatRight,
+} from './atoms/div';

@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'dev site',
+  title: 'docz-theme-figma',
   typescript: true,
   theme: 'dist',
 };
