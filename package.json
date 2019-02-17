@@ -12,7 +12,7 @@
     "dist"
   ],
   "scripts": {
-    "prepare": "yarn build",
+    "prepare": "yarn ts.build",
     "test": ":",
     "ts.dev": "tsc -w",
     "ts.build": "tsc",
