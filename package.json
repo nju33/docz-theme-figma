@@ -16,6 +16,7 @@
     "ts.dev": "tsc -w",
     "ts.build": "tsc",
     "docz.dev": "docz dev --config doczrc.dev.js",
+    "docz.build": "docz build --config doczrc.build.js",
     "dev": "run-p *.dev",
     "build": "run-s *.build"
   },
