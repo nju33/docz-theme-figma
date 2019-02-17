@@ -1,10 +1,11 @@
 {
   "name": "docz-theme-figma",
+  "description": "A docz theme like Figma",
   "version": "0.0.3",
   "main": "index.js",
   "module": "dist/index.js",
   "source": "src/index.tsx",
-  "repository": "git@github.com:nju33/docz-theme-figma.git",
+  "repository": "nju33/docz-theme-figma.git",
   "author": "nju33 <nju33.ki@gmail.com>",
   "license": "MIT",
   "files": [
